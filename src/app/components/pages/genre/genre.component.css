@@ -1,0 +1,25 @@
+.container {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+mat-icon {
+  vertical-align: sub;
+}

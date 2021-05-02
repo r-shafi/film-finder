@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <header>
+    <h2><a routerLink="/" routerLinkActive="active">Film Finder App 🔍</a></h2>
+  </header>
+
+  <nav *ngIf="genres">
+    <h3>Movies by Genre</h3>
+    <div *ngFor="let genre of genres.genres">
+      <a
+        [routerLink]="['/genre', genre.name, genre.id]"
+        routerLinkActive="active"
+        >{{ genre.name }}</a
+      >
+    </div>
+  </nav>
+
+  <p>Code on Github</p>
+</div>

@@ -1,0 +1,30 @@
+.container {
+  padding: 1rem;
+}
+
+mat-form-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+mat-card {
+  background: #dddddd;
+}
+
+img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+mat-icon {
+  vertical-align: sub;
+}

@@ -1,0 +1,33 @@
+<div *ngIf="movie" class="movie">
+  <img [src]="bg + movie.backdrop_path" alt="" />
+  <div class="details">
+    <div class="info">
+      <h1>{{ movie.title }}</h1>
+      <p>{{ movie.release_date }}</p>
+    </div>
+    <div class="extra">
+      <mat-chip-list>
+        <mat-chip *ngFor="let genre of movie.genres">
+          <a [routerLink]="['/genre', genre.name, genre.id]">
+            {{ genre.name }}
+          </a>
+        </mat-chip>
+      </mat-chip-list>
+      <p class="language">
+        <mat-icon aria-hidden="false" aria-label="Movie Average Rating">
+          language
+        </mat-icon>
+        {{ movie.original_language | uppercase }}
+      </p>
+    </div>
+    <p class="description">{{ movie.overview }}</p>
+
+    <p>
+      <mat-icon aria-hidden="false" aria-label="Movie Average Rating">
+        star
+      </mat-icon>
+      {{ movie.vote_average }}
+    </p>
+  </div>
+</div>
+<mat-spinner *ngIf="!movie"></mat-spinner>

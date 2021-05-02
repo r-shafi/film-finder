@@ -1,0 +1,31 @@
+<div class="container">
+  <div *ngIf="movies" class="movies">
+    <div *ngFor="let movie of movies.results" class="movie">
+      <a [routerLink]="['/movie', movie.id]">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ movie.title }}</mat-card-title>
+            <mat-card-subtitle>
+              <mat-icon aria-hidden="false" aria-label="Movie Average Rating">
+                star
+              </mat-icon>
+              {{ movie.vote_average }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <img
+            mat-card-image
+            [src]="imageURL + movie.poster_path"
+            [alt]="movie.title"
+          />
+          <mat-card-content>
+            <p>
+              {{ movie.overview | slice: 0:100 }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+
+  <mat-spinner *ngIf="!movies"></mat-spinner>
+</div>
