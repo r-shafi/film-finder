@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  min-width: 80%;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+mat-icon {
+  vertical-align: sub;
+}

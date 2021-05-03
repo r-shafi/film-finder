@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "movie-app-1151e": {
+      "hosting": {
+        "movie-search": [
+          "movie-app-1151e"
+        ]
+      }
+    }
+  }
+}

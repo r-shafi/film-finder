@@ -17,6 +17,11 @@ import { GenreComponent } from './components/pages/genre/genre.component';
 import { MovieComponent } from './components/pages/movie/movie.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginComponent } from './components/pages/login/login.component';
+import { MatButtonModule } from '@angular/material/button';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ContentComponent,
     GenreComponent,
     MovieComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +43,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatIconModule,
     MatChipsModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],
