@@ -16,7 +16,6 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: any) => {
       this.tmdb.getIndividualMovie(params.params.id).subscribe((data) => {
-        console.log(data);
         this.movie = data;
       });
     });

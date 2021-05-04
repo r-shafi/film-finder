@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="card" *ngIf="!user">
+  <div class="card" *ngIf="!user || !user.displayName">
     <h1>Please Login Using Your Google Account</h1>
     <button mat-stroked-button color="primary" (click)="login()">
       Login <mat-icon>login</mat-icon>
     </button>
   </div>
-  <div class="card" *ngIf="user">
+  <div class="card" *ngIf="user && user.displayName">
     <img [src]="user.photoURL" [alt]="user.displayName" />
     <h1>Welcome {{ user.displayName }}</h1>
     <p>You are now free as a bird to browse this site 🦅</p>

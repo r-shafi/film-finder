@@ -1,5 +1,25 @@
+<header>
+  <h1>
+    <a routerLink="/">Film Finder App</a>
+  </h1>
+  <div class="user">
+    <div *ngIf="user && user.displayName">
+      <img [src]="user.photoURL" alt="" />
+      <p>{{ user.displayName }}</p>
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
+    <div *ngIf="!user || !user.displayName">
+      <button mat-button (click)="login()">Login</button>
+    </div>
+  </div>
+</header>
 <mat-sidenav-container autosize>
-  <mat-sidenav mode="side" opened fixedInViewport>
+  <mat-sidenav mode="side" opened fixedInViewport fixedTopGap="70">
     <app-sidebar></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>

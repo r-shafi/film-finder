@@ -23,3 +23,7 @@ img {
 mat-icon {
   vertical-align: sub;
 }
+
+.sort {
+  margin: 1rem 0;
+}

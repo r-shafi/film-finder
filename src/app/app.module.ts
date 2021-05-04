@@ -19,6 +19,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './components/pages/login/login.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -44,6 +45,7 @@ import { environment } from '../environments/environment';
     MatChipsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatMenuModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],

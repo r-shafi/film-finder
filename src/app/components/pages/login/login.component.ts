@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import firebase from 'firebase/app';
+import { Router } from '@angular/router';
+import { GoogleLoginService } from 'src/app/services/google-login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,22 +8,20 @@ import firebase from 'firebase/app';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(public auth: AngularFireAuth) {}
+  constructor(private google: GoogleLoginService, private router: Router) {}
 
   user: any;
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.user = this.google.sendUser();
+  }
 
   login() {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    this.auth.user.subscribe((data) => {
-      this.user = data;
-      localStorage.setItem('token', data?.uid || '');
-    });
+    this.user = this.google.login();
+    this.router.navigateByUrl('/');
   }
 
   logout() {
-    this.auth.signOut();
-    localStorage.removeItem('token');
+    this.google.logout();
   }
 }

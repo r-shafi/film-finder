@@ -1,3 +1,40 @@
+header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff4c4c;
+  padding: 0 2rem;
+}
+
+header h1,
+header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+header h1 a {
+  color: black;
+}
+
+.user div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user div p {
+  margin: 0 0 0 1rem;
+}
+
+.user div img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+
 mat-sidenav-content {
   padding: 1rem;
 }

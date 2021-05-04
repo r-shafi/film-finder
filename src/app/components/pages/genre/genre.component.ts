@@ -20,4 +20,18 @@ export class GenreComponent implements OnInit {
       })
     );
   }
+
+  sortByRating() {
+    this.movies.results.sort(
+      (a: any, b: any) => b.vote_average - a.vote_average
+    );
+  }
+
+  sortByRelease() {
+    this.movies.results.sort(
+      (a: any, b: any) =>
+        new Date(`${b.release_date}`).getTime() -
+        new Date(`${a.release_date}`).getTime()
+    );
+  }
 }
